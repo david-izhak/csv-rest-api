@@ -1,0 +1,23 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: csv-rest-api-with-replicas
+  labels:
+    app  : csv-rest-api-app
+    env  : prod
+    owner: David_Izhak
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      project: csv-rest-api
+  template:
+    metadata:
+      labels:
+        project: csv-rest-api
+    spec:
+      containers:
+        - name : csv-rest-api-app
+          image: davidizhak/csv-rest-api:latest
+          ports:
+            - containerPort: 8080
