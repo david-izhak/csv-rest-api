@@ -1,0 +1,14 @@
+logging:
+#  file:
+#    name: local.log
+#    path: /
+  level:
+    root: info
+    com.example.csvrestapi: debug
+
+csv:
+  path: "/player.csv"
+
+cache:
+  populate:
+    delay: 1000
